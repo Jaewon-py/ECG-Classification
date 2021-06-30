@@ -98,7 +98,24 @@ for train_index, val_index in skf.split(data, label):
   y_pred = model.predict(x_test) / 5
   pred_list.append(y_pred)
 ```
+
+```
+pred = np.array(pred_list[0])
+for i in range (4):
+  pred += np.array(pred_list[i+1])
+  
+y_pred = np.argmax(pred,axis=1)
+```
 - Result
+```
+from sklearn.metrics import accuracy_score, f1_score
+
+f1 = f1_score(y_test, y_pred, average = 'macro')
+print("Test f1 score : %s "% f1)
+
+accuracy = accuracy_score(y_test, y_pred)
+print("Test acc score : %s "% accuracy)
+```
 
 **CNN-LSTM**
 - Concept
