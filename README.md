@@ -77,6 +77,8 @@ class Convnet(Model):
         return x 
 ```
 - Stratified K-Fold
+
+
 **K-Fold** 
 
 데이터를 k개 분할로 나누고, k-1개의 분할에서 훈련이 이루어지며, 나머지 분할에서 평가하는 방법입니다. score의 경우, 각 Fold 별 score들의 평균값을 사용합니다.
